@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './shared/components';
-import { ElevatorModule } from './elevator/elevator.module';
+import { ElevatorDashBoardModule } from './elevator/elevator-dash-board.module';
 
 const routes: Routes = [
   {
@@ -15,7 +15,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
-    ElevatorModule
+    ElevatorDashBoardModule
   ],
   exports: [RouterModule]
 })

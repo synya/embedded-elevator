@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { ElevatorModule } from './elevator/elevator.module';
+import { ElevatorDashBoardModule } from './elevator/elevator-dash-board.module';
 
 import { AppComponent } from './app.component';
 
@@ -26,7 +26,7 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>  new Transl
     HttpClientModule,
     CoreModule,
     SharedModule,
-    ElevatorModule,
+    ElevatorDashBoardModule,
     AppRoutingModule,
     TranslateModule.forRoot({
       loader: {

@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { ElevatorComponent } from './elevator.component';
-import { ElevatorDashBoardComponent } from './elevator-dash-board/elevator-dash-board.component';
-import { ElevatorRouterModule } from './elevator-router.module';
+import { ElevatorDashBoardComponent } from './elevator-dash-board.component';
+import { ElevatorDashBoardRouterModule } from './elevator-dash-board-router.module';
 import { SharedModule } from '../shared/shared.module';
 import { UartPortSelectorComponent } from '../shared/components/uart-port-selector/uart-port-selector.component';
 
@@ -11,14 +10,13 @@ import { UartPortSelectorComponent } from '../shared/components/uart-port-select
 
 @NgModule({
   declarations: [
-    ElevatorComponent,
     ElevatorDashBoardComponent,
     UartPortSelectorComponent
   ],
   imports: [
     CommonModule,
-    ElevatorRouterModule,
+    ElevatorDashBoardRouterModule,
     SharedModule
   ]
 })
-export class ElevatorModule { }
+export class ElevatorDashBoardModule { }
