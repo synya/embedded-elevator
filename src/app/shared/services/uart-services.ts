@@ -1,27 +1,24 @@
+import { ElectronService } from '../../core/services';
 import { Injectable } from '@angular/core';
+
 import { UartPort } from '../model/uart-port';
-
-// import * as SerialPort from 'serialport';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class UartService {
 
-  constructor() {
+  constructor(private electron: ElectronService) {
   }
 
   getUartPortsAvailable(): UartPort[] {
-    // SerialPort.list().then((ports:any)=>{
-    //   console.log(ports);
-    // }).catch((err:any)=>{
-    //   console.log(err);
-    // });
-    return [
-      {name: 'PORT 1'},
-      {name: 'PORT 2'},
-    ];
+    const uartPorts: UartPort[] = [];
+    this.electron.serialPort.list().then((ports: any) => {
+      ports.forEach(p => {uartPorts.push(new UartPort({name: p['path']}));});
+    }).catch((err: any) => {
+      console.log(err);
+    });
+    return uartPorts;
   }
 
 }

@@ -63,6 +63,13 @@ function createWindow(): BrowserWindow {
   return win;
 }
 
+// This is required to be set to false beginning in Electron v9 otherwise
+// the SerialPort module can not be loaded in Renderer processes like we are doing
+// in this example. The linked Github issues says this will be deprecated starting in v10,
+// however it appears to still be changed and working in v11.2.0
+// Relevant discussion: https://github.com/electron/electron/issues/18397
+app.allowRendererProcessReuse=false
+
 try {
   // This method will be called when Electron has finished
   // initialization and is ready to create browser windows.

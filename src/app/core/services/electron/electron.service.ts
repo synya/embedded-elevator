@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import * as SerialPort from 'serialport';
 
 // If you import a module but never use any of the imported values other than as TypeScript types,
 // the resulting javascript file will look as if you never imported the module at all.
@@ -16,6 +17,7 @@ export class ElectronService {
   remote: typeof remote;
   childProcess: typeof childProcess;
   fs: typeof fs;
+  serialPort: typeof SerialPort;
 
   get isElectron(): boolean {
     return !!(window && window.process && window.process.type);
@@ -34,6 +36,8 @@ export class ElectronService {
       // it must be declared in dependencies of both package.json (in root and app folders)
       // If you want to use remote object in renderer process, please set enableRemoteModule to true in main.ts
       this.remote = window.require('@electron/remote');
+
+      this.serialPort = window.require('serialport');
     }
   }
 }

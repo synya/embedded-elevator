@@ -17,7 +17,6 @@ export class UartPortSelectorComponent implements OnInit {
 
   ngOnInit(): void {
     this.uartPorts = this.uartService.getUartPortsAvailable();
-    console.log(this.uartPorts);
   }
 
 }
