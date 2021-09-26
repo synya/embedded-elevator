@@ -1,3 +1,8 @@
-<select name="uart_port">
-  <option value="port_name" *ngFor="let uartPort of uartPorts">{{uartPort.name}}</option>
-</select>
+<div *ngIf="uartPorts.length === 0">
+  {{ 'SHARED.UART_PORT_SELECTOR.NOT_AVAILABLE' | translate }}
+</div>
+<div *ngIf="uartPorts.length > 0">
+  <select name="uart_port">
+    <option value="port_name" *ngFor="let uartPort of uartPorts">{{uartPort.name}}</option>
+  </select>
+</div>
