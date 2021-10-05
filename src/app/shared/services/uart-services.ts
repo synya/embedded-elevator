@@ -14,7 +14,7 @@ export class UartService {
   getUartPortsAvailable(): UartPort[] {
     const uartPorts: UartPort[] = [];
     this.electron.serialPort.list().then((ports: any) => {
-      ports.forEach(p => {uartPorts.push(new UartPort({name: p['path']}));});
+      ports.forEach(p => {uartPorts.push(new UartPort({name: p.path}));});
     }).catch((err: any) => {
       console.log(err);
     });
