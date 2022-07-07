@@ -3,7 +3,7 @@ import * as BinaryParserEncoder from 'binary-parser-encoder';
 
 import { ApiCoreRequest } from '../../model/api/core/api-core-request';
 import { UartPort } from '../../model/uart-port';
-import { UartService } from '../../services/uart-services';
+import { UartService } from '../../services/uart-service';
 
 @Component({
   selector: 'app-uart-port-selector',
